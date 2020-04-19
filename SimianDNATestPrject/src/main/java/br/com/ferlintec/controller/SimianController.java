@@ -1,28 +1,26 @@
 package br.com.ferlintec.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.ferlintec.data.SimianVO;
-import br.com.ferlintec.exception.NotSimianDNAException;
-import br.com.ferlintec.simiantest.SimianDNATest;
+import br.com.ferlintec.services.SimianServices;
 
 @RestController
 @RequestMapping("/simian")
 public class SimianController {
 
+	@Autowired
+	private SimianServices service;
 
+	
 	@PostMapping
-	public boolean isSimian(@RequestBody SimianVO dna) {
+	public boolean isSimian(@RequestBody SimianVO vo) {
 		
-		SimianDNATest test = new SimianDNATest(); 
-
-		if (!test.isSimian(dna.getDna())) {
-			throw new NotSimianDNAException("Não é um Simian.");
-		}
-		return true;
+		return service.isSimian(vo);
 	}
 	
 	

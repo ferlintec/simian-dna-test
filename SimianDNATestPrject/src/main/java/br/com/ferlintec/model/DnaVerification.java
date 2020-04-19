@@ -10,19 +10,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="dna_history_verification")
-public class DNAVerificationHistory implements Serializable{
+@Table(name="dna_verification")
+public class DnaVerification implements Serializable{
 	
-	public DNAVerificationHistory() {
+	public DnaVerification() {
 		super();
 	}
 	
-	public DNAVerificationHistory(String dnaCode, boolean isSimian, int size) {
+	public DnaVerification(String[] dnaCode, boolean isSimian) {
 		super();
-		this.dnaCode = dnaCode;
-		this.isSimian = isSimian;
-		this.size = size;
 		
+		this.setDnaCode(dnaCode);
+		this.isSimian = isSimian;
+		this.setDnaSideLength(dnaCode);
 		this.hashCode = this.hashCode();
 	}
 
@@ -39,7 +39,8 @@ public class DNAVerificationHistory implements Serializable{
 	private boolean isSimian;
 	
 	@Column(nullable = false)
-	private int size;
+	private int dnaSideLength;
+	
 	
 	@Column(nullable = false)
 	private int hashCode;
@@ -60,6 +61,13 @@ public class DNAVerificationHistory implements Serializable{
 	public void setDnaCode(String dnaCode) {
 		this.dnaCode = dnaCode;
 	}
+	
+	public void setDnaCode(String[] dnaCode) {
+		StringBuilder sb = new StringBuilder();
+		for (String s : dnaCode)
+			sb.append(s);
+		this.dnaCode = sb.toString();
+	}
 
 	public boolean isSimian() {
 		return isSimian;
@@ -69,13 +77,6 @@ public class DNAVerificationHistory implements Serializable{
 		this.isSimian = isSimian;
 	}
 
-	public int getSize() {
-		return size;
-	}
-
-	public void setSize(int size) {
-		this.size = size;
-	}
 
 	public int getHashCode() {
 		return hashCode;
@@ -85,12 +86,23 @@ public class DNAVerificationHistory implements Serializable{
 		this.hashCode = hashCode;
 	}
 
+	public int getDnaSideLength() {
+		return dnaSideLength;
+	}
+
+	public void setDnaSideLength(int dnaSideLength) {
+		this.dnaSideLength = dnaSideLength;
+	}
+
+	public void setDnaSideLength(String[] dnaCode) {
+		this.dnaSideLength = dnaCode.length;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((dnaCode == null) ? 0 : dnaCode.hashCode());
-		result = prime * result + size;
 		return result;
 	}
 
@@ -102,16 +114,16 @@ public class DNAVerificationHistory implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		DNAVerificationHistory other = (DNAVerificationHistory) obj;
-		if (dnaCode == null) {
-			if (other.dnaCode != null)
+		DnaVerification other = (DnaVerification) obj;
+		if (dnaCode == null && other.dnaCode != null) {
 				return false;
 		} else if (!dnaCode.equals(other.dnaCode))
 			return false;
-		if (size != other.size)
+		if (dnaSideLength != other.dnaSideLength)
 			return false;
 		return true;
 	}
+
 
 	
 }

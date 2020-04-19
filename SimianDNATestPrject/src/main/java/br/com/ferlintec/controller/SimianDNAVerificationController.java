@@ -6,19 +6,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.ferlintec.data.SimianVO;
+import br.com.ferlintec.data.DnaVerificationVO;
 import br.com.ferlintec.services.SimianServices;
 
 @RestController
 @RequestMapping("/simian")
-public class SimianController {
+public class SimianDNAVerificationController {
 
 	@Autowired
 	private SimianServices service;
 
 	
 	@PostMapping
-	public boolean isSimian(@RequestBody SimianVO vo) {
+	public boolean isSimian(@RequestBody DnaVerificationVO vo) {
 		
 		return service.isSimian(vo);
 	}

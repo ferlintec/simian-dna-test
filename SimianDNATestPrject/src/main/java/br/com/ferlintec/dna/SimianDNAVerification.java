@@ -1,8 +1,8 @@
-package br.com.ferlintec.simiantest;
+package br.com.ferlintec.dna;
 
 import br.com.ferlintec.exception.InvalidDNAException;
 
-public class SimianDNATest {
+public class SimianDNAVerification {
 
 	private static final String SEQUENCIA_REPETIDA_REGEX = ".*A{4}.*|.*T{4}.*|.*C{4}.*|.*G{4}.*";
 	private static final String LETRA_VALIDA_DNA_REGEX = "[ATCG]+";
@@ -15,7 +15,7 @@ public class SimianDNATest {
 				throw new InvalidDNAException("Não é uma matriz quadrada.");
 		
 			if (!isBaseDNAValida(dna))
-				throw new InvalidDNAException("O DNA contém letras inválidas, diferentes de 'ATCG'.");
+				throw new InvalidDNAException("O DnaVerification contém letras inválidas, diferentes de 'ATCG'.");
 			
 			if (verificarSequenciaRepetidaLinhas(dna))
 				return true;
@@ -147,10 +147,10 @@ public class SimianDNATest {
 	}
 	
 	/**
-	 * Verifica se as letras da sequência nitrogenada do DNA são válidas.
+	 * Verifica se as letras da sequência nitrogenada do DnaVerification são válidas.
 	 * 
 	 * @param dna
-	 * @return TRUE, caso o DNA contenha apenas as letras A,T, C e G, 
+	 * @return TRUE, caso o DnaVerification contenha apenas as letras A,T, C e G, 
 	 * 			ou FALSE, caso contrário.
 	 */
 	protected boolean isBaseDNAValida(String[] dna) {
@@ -163,7 +163,7 @@ public class SimianDNATest {
 	
 	
 	/**
-	 * Verifica se há uma sequência repetida de 4 letras válidas no DNA.
+	 * Verifica se há uma sequência repetida de 4 letras válidas no DnaVerification.
 	 * @param sequencia
 	 * @return TRUE se houver pelo menos 4 letras repetidas em sequência,
 	 * 			FALSE, caso contrário.
@@ -177,7 +177,7 @@ public class SimianDNATest {
 
 
 	/**
-	 * Verificar se a matriz de DNA é quadrada.
+	 * Verificar se a matriz de DnaVerification é quadrada.
 	 * 
 	 * @param dna
 	 * @return TRUE se for  quadrada, e FALSE, caso contrário.

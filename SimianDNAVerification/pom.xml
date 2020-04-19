@@ -8,7 +8,7 @@
   </parent>
   
   <groupId>br.com.ferlintec</groupId>
-  <artifactId>simian-dna-test</artifactId>
+  <artifactId>simian-dna-verification</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   
@@ -41,15 +41,17 @@
         </dependency>   
         
         <dependency>
+		   <groupId>org.flywaydb</groupId>
+		   <artifactId>flyway-core</artifactId>
+		</dependency> 
+		
+        <dependency>
 		    <groupId>com.github.dozermapper</groupId>
 		    <artifactId>dozer-core</artifactId>
 		    <version>6.4.1</version>
 		</dependency>  
 		
-        <dependency>
-		   <groupId>org.flywaydb</groupId>
-		   <artifactId>flyway-core</artifactId>
-		</dependency>  
+         
                
         <dependency>
           <groupId>junit</groupId>

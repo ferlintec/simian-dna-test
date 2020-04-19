@@ -1,13 +1,13 @@
-package br.com.erudio.services;
+package br.com.ferlintec.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.erudio.model.Person;
-import br.com.erudio.repository.PersonRepository;
 import br.com.ferlintec.exception.ResourceNotFoundException;
+import br.com.ferlintec.model.Person;
+import br.com.ferlintec.repository.PersonRepository;
 
 @Service
 public class PersonServices {

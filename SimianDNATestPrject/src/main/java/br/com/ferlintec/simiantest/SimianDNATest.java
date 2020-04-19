@@ -44,7 +44,7 @@ public class SimianDNATest {
 	}
 	
 	
-	public boolean verificarSequenciaRepetidaColunas(char[][] matrizDNA) {
+	protected boolean verificarSequenciaRepetidaColunas(char[][] matrizDNA) {
 		 
 		int dimensao = matrizDNA.length;
 		
@@ -131,7 +131,7 @@ public class SimianDNATest {
 		return false;
 	}
 	
-	public char[][] montarMatriz(String[] dna){
+	protected char[][] montarMatriz(String[] dna){
 		int dimensao = dna.length;
 		char[][] matriz = new char[dimensao][dimensao];
 		
@@ -192,26 +192,4 @@ public class SimianDNATest {
 		return true;
 	}
 	
-	
-	public static void main(String[] args) {
-		SimianDNATest test = new SimianDNATest();
-		
-		String [] dna = {"CTGAGA", "CTATGC", "TATTGT", "AGAGGG", "CCCCTA", "TCACTG"};
-	
-		char[][] matrizDNA = test.montarMatriz(dna);
-		System.out.println(test.isSimian(dna));
-		
-		String[] dna2 = {"CTGAGA", "CTATGC", "TATTGT", "AGAGGG", "CCCCTA", "TCBCTG"};
-		System.out.println(test.isSimian(dna2));
-//		System.out.println(test.verificarSequenciaRepetidaColunas(matrizDNA));
-//		System.out.println(test.isSimian(dna));
-//		System.out.println("CCCCTA".matches(".*A{4}.*|.*T{4}.*|.*C{4}.*|.*G{4}.*"));
-//		System.out.println("CGGGGA".matches(".*A{4}.*|.*T{4}.*|.*C{4}.*|.*G{4}.*"));
-//		System.out.println("CCAAAA".matches(".*A{4}.*|.*T{4}.*|.*C{4}.*|.*G{4}.*"));
-//		System.out.println("CGTATA".matches(".*A{4}.*|.*T{4}.*|.*C{4}.*|.*G{4}.*"));
-//		
-//		System.out.println("CCCTDA".matches("[ATCG]+"));
-		
-		
-	}
 }

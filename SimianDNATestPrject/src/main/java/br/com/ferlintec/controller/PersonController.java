@@ -1,4 +1,4 @@
-package br.com.erudio.controller;
+package br.com.ferlintec.controller;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.erudio.model.Person;
-import br.com.erudio.services.PersonServices;
+import br.com.ferlintec.model.Person;
+import br.com.ferlintec.services.PersonServices;
 
 @RestController
 @RequestMapping("/person")

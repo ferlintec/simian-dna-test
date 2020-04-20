@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import br.com.ferlintec.model.DnaVerification;
 
 @Repository
-public interface DNAVerificationHistoryRepository extends JpaRepository<DnaVerification, Long>{
+public interface DNAVerificationRepository extends JpaRepository<DnaVerification, Long>{
+
+	DnaVerification findByHashCode(int hashCode);
 
 }

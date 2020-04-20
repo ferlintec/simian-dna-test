@@ -10,34 +10,58 @@ import br.com.ferlintec.dna.SimianDNAVerification;
 import br.com.ferlintec.exception.NotSimianDNAException;
 import br.com.ferlintec.exception.ResourceNotFoundException;
 import br.com.ferlintec.model.DnaVerification;
-import br.com.ferlintec.repository.DNAVerificationHistoryRepository;
+import br.com.ferlintec.repository.DNAVerificationRepository;
 
 @Service
 public class SimianServices {
 
 	
 	@Autowired
-	DNAVerificationHistoryRepository repository;
+	DNAVerificationRepository repository;
 		
-	public DnaVerification create(DnaVerification dnaVerification) {
-		return repository.save(dnaVerification);
-	}
-	
-	
-	public boolean isSimian(DnaVerificationVO vo) {
-		SimianDNAVerification test = new SimianDNAVerification(); 
 
-		boolean isSimian = test.isSimian(vo.getDna());
-				
-		DnaVerification entity = new DnaVerification(vo.getDna(), isSimian);
-		entity.setHashCode(entity.hashCode());
-		repository.save(entity);
-		
-		if (!isSimian) {
-			throw new NotSimianDNAException("Não é um Simian.");
+	
+	/**
+	 * Verifica se  o DNA informado é de um mutante Simian ou de um
+	 * humano.
+	 * O sistema gera exceção caso a matriz de DNA seja inválida, nos seguintes casos:
+	 * 	-Possuir letra diferente de ACTG.
+	 *  -Não for quadrada.
+	 * 
+	 * O mesmo DNA não terá duplicidade na base.
+	 * 
+	 * @param dnaVerificationVO
+	 * @return TRUE se for DNA mutante Simian, FALSE se for DNA humano.
+	 */
+	public boolean isSimian(DnaVerificationVO dnaVerificationVO) {
+
+
+		DnaVerification entity = findByHashCode(dnaVerificationVO.getHashCode());
+
+		if (entity != null) {
+			return entity.isSimian();
+		}else {
+			
+			var simianDNAVerification = new SimianDNAVerification(); 
+			
+			boolean isSimian = simianDNAVerification.isSimian(dnaVerificationVO.getDna());
+			
+			entity = new DnaVerification(dnaVerificationVO.getDna(), isSimian);
+
+			create(entity);
+
+			return isSimian;
 		}
 		
-		return true;
+	}
+	
+	public DnaVerification findByHashCode(int hashCode) {
+		
+		return repository.findByHashCode(hashCode);
+	}
+
+	public DnaVerification create(DnaVerification dnaVerification) {
+		return repository.save(dnaVerification);
 	}
 	
 	public List<DnaVerification> findAll() {

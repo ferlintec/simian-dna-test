@@ -34,6 +34,8 @@ public class SimianDNAVerification {
 		return false;
 	}
 	
+	
+	
 	protected boolean verificarSequenciaRepetidaLinhas(String[] dna) {
 		
 		for (String sequencia : dna) {

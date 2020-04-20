@@ -13,18 +13,6 @@ import javax.persistence.Table;
 @Table(name="dna_verification")
 public class DnaVerification implements Serializable{
 	
-	public DnaVerification() {
-		super();
-	}
-	
-	public DnaVerification(String[] dnaCode, boolean isSimian) {
-		super();
-		
-		this.setDnaCode(dnaCode);
-		this.isSimian = isSimian;
-		this.setDnaSideLength(dnaCode);
-		this.hashCode = this.hashCode();
-	}
 
 	private static final long serialVersionUID = 1L;
 
@@ -38,13 +26,24 @@ public class DnaVerification implements Serializable{
 	@Column(name = "is_simian", nullable = false)
 	private boolean isSimian;
 	
-	@Column(nullable = false)
+	@Column(name = "dna_side_length",nullable = false)
 	private int dnaSideLength;
 	
 	
-	@Column(nullable = false)
+	@Column(name ="hash_code", nullable = false)
 	private int hashCode;
 
+	
+	public DnaVerification() {
+		super();
+	}
+	
+	public DnaVerification(String[] dna, boolean isSimian) {
+		super();
+		
+		this.setDnaCode(dna);
+		this.isSimian = isSimian;
+	}
 	
 	public Long getId() {
 		return id;
@@ -62,11 +61,13 @@ public class DnaVerification implements Serializable{
 		this.dnaCode = dnaCode;
 	}
 	
-	public void setDnaCode(String[] dnaCode) {
+	public void setDnaCode(String[] dna) {
 		StringBuilder sb = new StringBuilder();
-		for (String s : dnaCode)
+		for (String s : dna)
 			sb.append(s);
-		this.dnaCode = sb.toString();
+		this.setDnaCode(sb.toString());
+		this.setDnaSideLength(dna);
+		this.setHashCode(this.hashCode());
 	}
 
 	public boolean isSimian() {
@@ -76,7 +77,6 @@ public class DnaVerification implements Serializable{
 	public void setSimian(boolean isSimian) {
 		this.isSimian = isSimian;
 	}
-
 
 	public int getHashCode() {
 		return hashCode;

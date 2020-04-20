@@ -1,6 +1,8 @@
 package br.com.ferlintec.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +20,12 @@ public class SimianDNAVerificationController {
 
 	
 	@PostMapping
-	public boolean isSimian(@RequestBody DnaVerificationVO vo) {
+	public ResponseEntity<?> isSimian(@RequestBody DnaVerificationVO vo) {
 		
-		return service.isSimian(vo);
+		if (service.isSimian(vo))
+			return new ResponseEntity<>(Boolean.TRUE, HttpStatus.OK);
+		else
+			return new ResponseEntity<>(Boolean.FALSE, HttpStatus.FORBIDDEN);
 	}
 	
 	

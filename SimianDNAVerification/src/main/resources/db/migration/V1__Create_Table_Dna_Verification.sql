@@ -6,4 +6,4 @@ CREATE TABLE IF NOT EXISTS `dna_verification` (
   `hash_code` bigint(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_constraint_dna_verification_dna_code` (`dna_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) 

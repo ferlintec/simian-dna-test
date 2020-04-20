@@ -123,7 +123,7 @@ Exemplo de chamada:
 http://localhost:8080/simian
 ```
 
-Exemplo de chamada:
+Exemplo de retorno:
 
 ```
 true

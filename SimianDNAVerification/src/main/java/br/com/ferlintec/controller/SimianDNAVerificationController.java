@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.ferlintec.data.DnaVerificationVO;
-import br.com.ferlintec.services.SimianServices;
+import br.com.ferlintec.services.DNAVerificationServices;
 
 @RestController
 @RequestMapping("/simian")
 public class SimianDNAVerificationController {
 
 	@Autowired
-	private SimianServices service;
+	private DNAVerificationServices service;
 
 	
 	@PostMapping

@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.ferlintec.data.DnaVerificationVO;
+import br.com.ferlintec.data.StatsVO;
 import br.com.ferlintec.dna.SimianDNAVerification;
-import br.com.ferlintec.exception.NotSimianDNAException;
 import br.com.ferlintec.exception.ResourceNotFoundException;
 import br.com.ferlintec.model.DnaVerification;
 import br.com.ferlintec.repository.DNAVerificationRepository;
 
 @Service
-public class SimianServices {
+public class DNAVerificationServices {
 
 	
 	@Autowired
@@ -53,6 +53,21 @@ public class SimianServices {
 			return isSimian;
 		}
 		
+	}
+	
+	/**
+	 * Retorna o total de DNAs mutantes (Simian) e humanos, e a proporção
+	 * de mutantes sobre o total de humandos.
+	 * 
+	 * @return Estatística total de DNAs verficados.
+	 */
+	public StatsVO getStats() {
+	
+		int count_mutant_dna = repository.countMutantDna();
+		int count_human_dna = repository.countHumanDna();
+		double ratio = (double)count_mutant_dna / count_human_dna;
+		
+		return new StatsVO(count_mutant_dna, count_human_dna, ratio);
 	}
 	
 	public DnaVerification findByHashCode(int hashCode) {

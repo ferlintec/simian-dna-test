@@ -1,4 +1,4 @@
-<a href="https://ibb.co/6g9G540"><img src="https://i.ibb.co/ysH99tH/1-dna.jpg" width="50%" heigth="50%" data-load="full" style border="0"></a>
+<a href="https://ibb.co/6g9G540"><img src="https://i.ibb.co/ysH99tH/1-dna.jpg" width="20%" heigth="20%" data-load="full" style border="0"></a>
 
 
 

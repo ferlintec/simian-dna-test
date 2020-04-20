@@ -180,6 +180,6 @@ As APIs estão disponibilizadas na AWS, nos seguintes endereços:
 ---
 ## Contato
 
-Adriano Ferlin
-adriano.ferlin@gmail.com
-+55 (48) 99941-2220
+- Adriano Ferlin
+- adriano.ferlin@gmail.com
+- +55 (48) 99941-2220

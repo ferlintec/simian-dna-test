@@ -1,4 +1,4 @@
-<img src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/1-dna.jpg">
+<img src="https://i.ibb.co/7Ks5rs4/1500x500.jpg">
 
 <!-- [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) -->
 

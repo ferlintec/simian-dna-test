@@ -29,8 +29,6 @@ Elas serão detalhadas mais abaixo.
 O método **isSimian(String[] dna)** está implementado na classe ```br.com.ferlintec.dna.SimianDNAVerfication```.
 
 
-
-
 ---
 ## Configuração de ambiente
 
@@ -80,6 +78,7 @@ Escolher uma das opções. Não há restrições quanto a outra IDE.
 
 Pronto. Os arquivos do projeto estarão salvos no diretório.
 
+
 ---
 ## Inicialização do sistema
 
@@ -101,10 +100,12 @@ Para inicialização adequada, é necessário que o MySQL esteja rodando, e com 
 - Executar o comando:
 ```mvn clean package spring-boot:run```
 
+
 ---
 ## Orientação para Consumo das APIs
 
 - Recomendado utilizar Postman para realização das chamadas.
+
 
 ### API REST '/simian'
 
@@ -120,13 +121,11 @@ Informar no *body* um **JSON** com a sequência de DNA a ser testada, conforme o
 ```
 
 Exemplo de chamada:
-
 ```
 http://localhost:8080/simian
 ```
 
 Exemplo de retorno:
-
 ```
 true
 ```
@@ -179,25 +178,22 @@ Os serviços foram hospedados na AWS, nos seguintes endereços:
 
 As instruções de uso de cada API são as mesmas descritas acima, alterando-se apenas a URL dos serviços.
 
----
-## Nostas Técnicas
-
-A solução foi desenvolvida utilizando:
-
-> Tecnologias
-
-- Java 11
-- Spring Boot
-- FlyWay (para versionamento de banco)
-- JUnit
-
-> Hospedagem
-
 A solução foi hospedada em uma instância [EC2](https://aws.amazon.com/pt/ec2/?nc2=type_a) com banco de dados em um [RDS](https://aws.amazon.com/pt/rds/?nc2=type_a).
 
 A implantação não foi realizada com balanceamento de carga, para suportar aumento de tráfego com alta disponibilidade e escalabilidade, nem com integração contínua, devido ao prazo.
 
 Para isto seria utilizado [Docker](https://www.docker.com/) com [Travis CI](https://travis-ci.org/).
+
+
+---
+## Nostas Técnicas
+
+A solução foi desenvolvida utilizando:
+
+- Java 11
+- Spring Boot
+- FlyWay (para versionamento de banco)
+- JUnit
 
 ---
 ## Contato

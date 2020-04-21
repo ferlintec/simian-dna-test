@@ -101,8 +101,8 @@ Retorna um **JSON** com o total de DNAs mutantes símios (*count_mutant_dna*), D
 
 Os serviços foram hospedados na AWS, nos seguintes endereços:
 
-- http://ec2-13-58-246-205.us-east-2.compute.amazonaws.com:8080/simian
-- http://ec2-13-58-246-205.us-east-2.compute.amazonaws.com:8080/stats
+- http://ec2-18-218-27-124.us-east-2.compute.amazonaws.com:8080/simian
+- http://ec2-18-218-27-124.us-east-2.compute.amazonaws.com:8080/stats
 
 As instruções de uso de cada API são as mesmas descritas acima, alterando-se apenas a URL dos serviços.
 

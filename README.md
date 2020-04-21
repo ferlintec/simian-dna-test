@@ -30,89 +30,6 @@ O método **isSimian(String[] dna)** está implementado na classe ```br.com.ferl
 
 
 ---
-## Configuração de ambiente
-
-Para montar o ambiente de desenvolvimento, e testar a aplicação em um IDE, siga as instruções a seguir.
-
-Requisitos:
-
-- [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) ou superior
-- [GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-- [Maven 3.6.3](http://maven.apache.org/download.cgi)
-- [MySql 5.7.22](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/#apt-repo-fresh-install)
-- [Postman](https://www.postman.com/downloads/)
-- Sistema operacional Linux, Windows ou Mac
-
-
-### Instalação do Java
-
-- Instalar o [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) , conforme as isntruções para seu sistema operacional.
-
-
-### Instalação do Maven
-
-- Instalar o [Maven 3.6.3](https://maven.apache.org/install.html) , conforme as isntruções para seu sistema operacional.
-
-
-### Instalar e Configurar banco de dados MySQL
-
-- Instalar o [MySQL 5.7.22](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/#apt-repo-fresh-install), ou superior.
-- Configurar o banco na porta 3306
-- Criar username *root* e senha *admin123*.
-- Criar database schemma com nome 'simian'.
-
-
-### Instalação da IDE (Eclipse ou IntelliJ IDEA)
-
-Escolher uma das opções. Não há restrições quanto a uso de outra IDE.
-
-- **Opção 1:** Instalar [Eclipse](https://www.eclipse.org/downloads/packages/release/2020-03/r/eclipse-ide-enterprise-java-developers-includes-incubating-components), conforme as isntruções para seu sistema operacional.
-- **Opção 2:** Instalar [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows), conforme as isntruções para seu sistema operacional.
-
-
-### Clonar o projeto
-
-- Criar um diretório para armazenar o projeto.
-- Abrir o Git Bash(Windows), ou o terminal do Linux, neste diretório.
-- Executar o comando 'git clone https://github.com/ferlintec/simian-dna-test.git'
-- O sistema deverá solicitar suas credenciais de acesso.
-
-Pronto. Os arquivos do projeto estarão salvos no diretório.
-
-
----
-## Inicialização do sistema
-
-Para inicialização adequada, é necessário que o MySQL esteja rodando, e com o database 'simian' já criado.
-
-
-### Inicializar sistema pela IDE
-
-- Abrir IDE de sua escolha (Eclipse ou Intllij IDEA).
-- Importar projeto como *Projeto Maven existente*. O projeto está dentro da pasta *<diretório raiz clonado>/SimianDNAVerification/SimianDNAVerification**.
-- Após importação do projeto, verificar se o mesmo está configurado com Java 11.
-- Acesse a classe ```br.com.ferlintec.Statup.java```, e execute como **Java Application**.
-
-
-### Inicializar sistema via linha de comando
-
-- Abrir terminal do sistema operacional.
-- Acessar o diretório do projeto: *<diretório raiz clonado>/SimianDNAVerification/SimianDNAVerification**.
-- Executar o comando:
-```mvn clean package spring-boot:run```
-
-Outra forma de inicializar a aplicação, é a seguinte:
-
-- Abrir terminal do sistema operacional.
-- Acessar o diretório do projeto: *<diretório raiz clonado>/SimianDNAVerification/SimianDNAVerification**.
-- Executar o comando:
-```mvn clean package```
-- O método acima irá gerar um arquivo .jar da aplicação na pasta target: simian-dna-verification-0.0.1-SNAPSHOT.jar
-- Executar o comando:
-```java -jar target/simian-dna-verification-0.0.1-SNAPSHOT.jar &```
-
-
----
 ## Orientação para Consumo das APIs
 
 - Recomendado utilizar Postman para realização das chamadas.
@@ -197,7 +114,7 @@ Para isto seria utilizado [Docker](https://www.docker.com/) com [Travis CI](http
 
 
 ---
-## Nostas Técnicas
+## Notas Técnicas
 
 A solução foi desenvolvida utilizando:
 
@@ -205,6 +122,89 @@ A solução foi desenvolvida utilizando:
 - Spring Boot
 - FlyWay (para versionamento de banco)
 - JUnit
+
+---
+## Configuração de ambiente
+
+Para montar o ambiente de desenvolvimento, e testar a aplicação em um IDE, siga as instruções a seguir.
+
+Requisitos:
+
+- [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) ou superior
+- [GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Maven 3.6.3](http://maven.apache.org/download.cgi)
+- [MySql 5.7.22](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/#apt-repo-fresh-install)
+- [Postman](https://www.postman.com/downloads/)
+- Sistema operacional Linux, Windows ou Mac
+
+
+### Instalação do Java
+
+- Instalar o [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) , conforme as isntruções para seu sistema operacional.
+
+
+### Instalação do Maven
+
+- Instalar o [Maven 3.6.3](https://maven.apache.org/install.html) , conforme as isntruções para seu sistema operacional.
+
+
+### Instalar e Configurar banco de dados MySQL
+
+- Instalar o [MySQL 5.7.22](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/#apt-repo-fresh-install), ou superior.
+- Configurar o banco na porta 3306
+- Criar username *root* e senha *admin123*.
+- Criar database schemma com nome 'simian'.
+
+
+### Instalação da IDE (Eclipse ou IntelliJ IDEA)
+
+Escolher uma das opções. Não há restrições quanto a uso de outra IDE.
+
+- **Opção 1:** Instalar [Eclipse](https://www.eclipse.org/downloads/packages/release/2020-03/r/eclipse-ide-enterprise-java-developers-includes-incubating-components), conforme as isntruções para seu sistema operacional.
+- **Opção 2:** Instalar [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows), conforme as isntruções para seu sistema operacional.
+
+
+### Clonar o projeto
+
+- Criar um diretório para armazenar o projeto.
+- Abrir o Git Bash(Windows), ou o terminal do Linux, neste diretório.
+- Executar o comando 'git clone https://github.com/ferlintec/simian-dna-test.git'
+- O sistema deverá solicitar suas credenciais de acesso.
+
+Pronto. Os arquivos do projeto estarão salvos no diretório.
+
+
+---
+## Inicialização do sistema
+
+Para inicialização adequada, é necessário que o MySQL esteja rodando, e com o database 'simian' já criado.
+
+
+### Inicializar sistema pela IDE
+
+- Abrir IDE de sua escolha (Eclipse ou Intllij IDEA).
+- Importar projeto como *Projeto Maven existente*. O projeto está dentro da pasta *<diretório raiz clonado>/SimianDNAVerification/SimianDNAVerification**.
+- Após importação do projeto, verificar se o mesmo está configurado com Java 11.
+- Acesse a classe ```br.com.ferlintec.Statup.java```, e execute como **Java Application**.
+
+
+### Inicializar sistema via linha de comando
+
+- Abrir terminal do sistema operacional.
+- Acessar o diretório do projeto: *<diretório raiz clonado>/SimianDNAVerification/SimianDNAVerification**.
+- Executar o comando:
+```mvn clean package spring-boot:run```
+
+Outra forma de inicializar a aplicação, é a seguinte:
+
+- Abrir terminal do sistema operacional.
+- Acessar o diretório do projeto: *<diretório raiz clonado>/SimianDNAVerification/SimianDNAVerification**.
+- Executar o comando:
+```mvn clean package```
+- O método acima irá gerar um arquivo .jar da aplicação na pasta target: simian-dna-verification-0.0.1-SNAPSHOT.jar
+- Executar o comando:
+```java -jar target/simian-dna-verification-0.0.1-SNAPSHOT.jar &```
+
 
 ---
 ## Contato

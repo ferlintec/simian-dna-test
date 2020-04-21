@@ -46,12 +46,12 @@ Requisitos:
 
 ### Instalação do Java
 
-- talar o [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) , conforme as isntruções para seu sistema operacional.
+- Instalar o [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) , conforme as isntruções para seu sistema operacional.
 
 
 ### Instalação do Maven
 
-- stalar o [Maven 3.6.3](https://maven.apache.org/install.html) , conforme as isntruções para seu sistema operacional.
+- Instalar o [Maven 3.6.3](https://maven.apache.org/install.html) , conforme as isntruções para seu sistema operacional.
 
 
 ### Instalar e Configurar banco de dados MySQL
@@ -64,7 +64,7 @@ Requisitos:
 
 ### Instalação da IDE (Eclipse ou IntelliJ IDEA)
 
-Escolher uma das opções. Não há restrições quanto a outra IDE.
+Escolher uma das opções. Não há restrições quanto a uso de outra IDE.
 
 - **Opção 1:** Instalar [Eclipse](https://www.eclipse.org/downloads/packages/release/2020-03/r/eclipse-ide-enterprise-java-developers-includes-incubating-components), conforme as isntruções para seu sistema operacional.
 - **Opção 2:** Instalar [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows), conforme as isntruções para seu sistema operacional.
@@ -73,8 +73,9 @@ Escolher uma das opções. Não há restrições quanto a outra IDE.
 ### Clonar o projeto
 
 - Criar um diretório para armazenar o projeto.
-- Abrir o GitBash neste diretório.
+- Abrir o Git Bash(Windows), ou o terminal do Linux, neste diretório.
 - Executar o comando 'git clone https://github.com/ferlintec/simian-dna-test.git'
+- O sistema deverá solicitar suas credenciais de acesso.
 
 Pronto. Os arquivos do projeto estarão salvos no diretório.
 
@@ -99,6 +100,16 @@ Para inicialização adequada, é necessário que o MySQL esteja rodando, e com 
 - Acessar o diretório do projeto: *<diretório raiz clonado>/SimianDNAVerification/SimianDNAVerification**.
 - Executar o comando:
 ```mvn clean package spring-boot:run```
+
+Outra forma de inicializar a aplicação, é a seguinte:
+
+- Abrir terminal do sistema operacional.
+- Acessar o diretório do projeto: *<diretório raiz clonado>/SimianDNAVerification/SimianDNAVerification**.
+- Executar o comando:
+```mvn clean package```
+- O método acima irá gerar um arquivo .jar da aplicação na pasta target: simian-dna-verification-0.0.1-SNAPSHOT.jar
+- Executar o comando:
+```java -jar target/simian-dna-verification-0.0.1-SNAPSHOT.jar &```
 
 
 ---

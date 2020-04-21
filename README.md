@@ -59,7 +59,7 @@ true
 ```
 
 A cada chamada, o sistema armazena o DNA na base de dados. 
-Um mesmo DNA válido não será inserido uma única vez, ou seja, não haverá duplicidade na base de dados.
+Um DNA válido será inserido uma única vez, ou seja, não haverá duplicidade na base de dados.
 
 
 **Retorno**

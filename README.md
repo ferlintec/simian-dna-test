@@ -34,6 +34,8 @@ O método **isSimian(String[] dna)** está implementado na classe ```br.com.ferl
 ---
 ## Configuração de ambiente
 
+Para montar o ambiente de desenvolvimento, e testar a aplicação em um IDE, siga as instruções a seguir.
+
 Requisitos:
 
 - [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) ou superior
@@ -170,12 +172,32 @@ Retorna um **JSON** com o total de DNAs mutantes símios (*count_mutant_dna*), D
 ---
 ## Acesso via Cloud AWS
 
-As APIs estão disponibilizadas na AWS, nos seguintes endereços:
+Os serviços foram hospedados na AWS, nos seguintes endereços:
 
-- <host_da_aws>:8080/simian
-- <host_da_aws>:8080/stats
+- http://ec2-13-58-246-205.us-east-2.compute.amazonaws.com:8080/simian
+- http://ec2-13-58-246-205.us-east-2.compute.amazonaws.com:8080/stats
 
-**IMPORTANTE: O sistema ainda não está liberado para a AWS, pois o cadastro da conta foi realizado dia 19/04/2020, e demora 24 horas para liberação dos serviços.**
+As instruções de uso de cada API são as mesmas descritas acima, alterando-se apenas a URL dos serviços.
+
+---
+## Nostas Técnicas
+
+A solução foi desenvolvida utilizando:
+
+> Tecnologias
+
+- Java 11
+- Spring Boot
+- FlyWay (para versionamento de banco)
+- JUnit
+
+> Hospedagem
+
+A solução foi hospedada em uma instância [EC2](https://aws.amazon.com/pt/ec2/?nc2=type_a) com banco de dados em um [RDS](https://aws.amazon.com/pt/rds/?nc2=type_a).
+
+A implantação não foi realizada com balanceamento de carga, para suportar aumento de tráfego com alta disponibilidade e escalabilidade, nem com integração contínua, devido ao prazo.
+
+Para isto seria utilizado [Docker](https://www.docker.com/) com [Travis CI](https://travis-ci.org/).
 
 ---
 ## Contato

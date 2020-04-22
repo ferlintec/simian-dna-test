@@ -50,7 +50,7 @@ Informar no *body* um **JSON** com a sequência de DNA a ser testada, conforme o
 
 Exemplo de chamada:
 ```
-http://localhost:8080/simian
+http://localhost:8080/dna-test/simian
 ```
 
 Exemplo de retorno:
@@ -80,7 +80,7 @@ Chamada do tipo **HTTP GET**. Não possui parâmetro de entrada.
 Exemplo de chamada:
 
 ```
-http://localhost:8080/stats
+http://localhost:8080/dna-test/stats
 ```
 
 **Retorno**
@@ -101,8 +101,8 @@ Retorna um **JSON** com o total de DNAs mutantes símios (*count_mutant_dna*), D
 
 Os serviços foram hospedados na AWS, nos seguintes endereços:
 
-- http://ec2-18-218-27-124.us-east-2.compute.amazonaws.com:8080/simian
-- http://ec2-18-218-27-124.us-east-2.compute.amazonaws.com:8080/stats
+- http://ec2-18-218-27-124.us-east-2.compute.amazonaws.com:8080/dna-test/simian
+- http://ec2-18-218-27-124.us-east-2.compute.amazonaws.com:8080/dna-test/stats
 
 As instruções de uso de cada API são as mesmas descritas acima, alterando-se apenas a URL dos serviços.
 
@@ -121,7 +121,7 @@ A solução foi desenvolvida utilizando:
 - Java 11
 - Spring Boot
 - FlyWay (para versionamento de banco)
-- JUnit
+- JUnit e Mockito
 
 ---
 ## Configuração de ambiente

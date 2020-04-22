@@ -38,6 +38,12 @@ public class DnaVerification implements Serializable{
 		super();
 	}
 	
+	public DnaVerification(String[] dna) {
+		super();
+		
+		this.setDnaCode(dna);
+	}
+	
 	public DnaVerification(String[] dna, boolean isSimian) {
 		super();
 		

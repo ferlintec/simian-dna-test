@@ -37,5 +37,8 @@ public class StatsVO implements Serializable{
 		this.ratio = ratio;
 	}
 	
-
+	public String toString()
+	{
+		return "{\"count_mutant_dna\":"+this.count_mutant_dna+",\"count_human_dna\":"+this.count_human_dna+",\"ratio\":"+this.ratio+"}";
+	}
 }

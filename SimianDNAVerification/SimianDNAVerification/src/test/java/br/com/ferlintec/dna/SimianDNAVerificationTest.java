@@ -1,10 +1,10 @@
 package br.com.ferlintec.dna;
 
-import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.mockito.InjectMocks;
 
 import br.com.ferlintec.exception.InvalidDNAException;
@@ -12,11 +12,14 @@ import br.com.ferlintec.exception.InvalidDNAException;
 public class SimianDNAVerificationTest {
 	
 	
-    List<String[]> dnaList;
-    
     @InjectMocks
     SimianDNAVerification simianDNAVerificatio;
 
+	//Caso não ocorra a exeção esperada, este objeto acusará o erro.
+	@Rule
+	public ExpectedException thrown  = ExpectedException.none();
+	
+	
     @Before
     public void setUp() {
     	simianDNAVerificatio = new SimianDNAVerification(); 
@@ -41,32 +44,23 @@ public class SimianDNAVerificationTest {
     @Test
     public void dnaMatrizNaoQuadradaTest() {
     	
+    	thrown.expect(InvalidDNAException.class);
+    	
     	String [] dna1 = {"CTGAGA", "CTGAGC", "TATTGT", "AGAGGG", "CCCCTA", "ATCACTG"},
 	    		  dna2 = {"CTGAGA", "CTGAGC", "TATTGT", "AGAGGG", "CCCCTA"};
     	
-    	try {
-    		simianDNAVerificatio.isSimian(dna1);
-    		simianDNAVerificatio.isSimian(dna2);
-		} catch (InvalidDNAException e) {
-			Assert.assertTrue(true);
-			return;
-		}
-    	Assert.assertTrue(false);
+		simianDNAVerificatio.isSimian(dna1);
+		simianDNAVerificatio.isSimian(dna2);
     }
 
     @Test
     public void dnaLetraErradaTest() {
     	
+    	thrown.expect(InvalidDNAException.class);
+    	
     	String [] dna = {"WCTGAGA", "CTGAGC", "TATTGT", "AGAGGG", "CCCCTA", "TCACTG"};
     	
-    	
-    	try {
-    		Assert.assertTrue(simianDNAVerificatio.isSimian(dna));
-		} catch (InvalidDNAException e) {
-			Assert.assertTrue(true);
-			return;
-		}
-    	Assert.assertTrue(false);
+    	simianDNAVerificatio.isSimian(dna);
     }
 
 }

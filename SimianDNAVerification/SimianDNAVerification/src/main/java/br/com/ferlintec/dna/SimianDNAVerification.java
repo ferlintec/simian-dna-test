@@ -7,7 +7,7 @@ public class SimianDNAVerification {
 	private static final String SEQUENCIA_REPETIDA_REGEX = ".*A{4}.*|.*T{4}.*|.*C{4}.*|.*G{4}.*";
 	private static final String LETRA_VALIDA_DNA_REGEX = "[ATCG]+";
 	
-	public boolean isSimian(String[] dna) {
+	public static boolean isSimian(String[] dna) {
 		
 		if (dna != null) {
 			
@@ -20,23 +20,34 @@ public class SimianDNAVerification {
 			if (verificarSequenciaRepetidaLinhas(dna))
 				return true;
 			
-			char[][] matrizDNA = montarMatriz(dna);
 			if (verificarSequenciaRepetidaLinhas(dna))
+				
 				return true;
-			else
+			
+			else {
+				
+				char[][] matrizDNA = montarMatriz(dna);
+				
 				if (verificarSequenciaRepetidaColunas(matrizDNA))
 					return true;
 				else
 					if (verificarSequenciaRepetidaVerticais(matrizDNA))
 						return true;
+			}
 		}
 		
 		return false;
 	}
 	
-	
-	
-	protected boolean verificarSequenciaRepetidaLinhas(String[] dna) {
+
+	/**
+	 * Verifica se há sequência com 4 ou mais repetições da mesma letro em todas as linhas
+	 * do DNA.
+	 * 
+	 * @param dna
+	 * @return TRUE se houver sequência repetida em uma das linhas, e FALSE, caso contrário.
+	 */
+	protected static boolean verificarSequenciaRepetidaLinhas(String[] dna) {
 		
 		for (String sequencia : dna) {
 			if (isQuatroRepetidas(sequencia))
@@ -46,7 +57,7 @@ public class SimianDNAVerification {
 	}
 	
 	
-	protected boolean verificarSequenciaRepetidaColunas(char[][] matrizDNA) {
+	protected static boolean verificarSequenciaRepetidaColunas(char[][] matrizDNA) {
 		 
 		int dimensao = matrizDNA.length;
 		
@@ -74,7 +85,7 @@ public class SimianDNAVerification {
 	 * @param matrizDNA
 	 * @return TRUE se encontrar sequência repetida nas diagonais, FALSE, caso contrário.
 	 */
-	protected boolean verificarSequenciaRepetidaVerticais(char[][] matrizDNA) {
+	protected static boolean verificarSequenciaRepetidaVerticais(char[][] matrizDNA) {
 		 
 		int dimensao = matrizDNA.length;
 		
@@ -133,7 +144,7 @@ public class SimianDNAVerification {
 		return false;
 	}
 	
-	protected char[][] montarMatriz(String[] dna){
+	protected static char[][] montarMatriz(String[] dna){
 		int dimensao = dna.length;
 		char[][] matriz = new char[dimensao][dimensao];
 		
@@ -155,7 +166,7 @@ public class SimianDNAVerification {
 	 * @return TRUE, caso o DnaVerification contenha apenas as letras A,T, C e G, 
 	 * 			ou FALSE, caso contrário.
 	 */
-	protected boolean isBaseDNAValida(String[] dna) {
+	protected static boolean isBaseDNAValida(String[] dna) {
 		for (String sequencia : dna) {
 			if (!sequencia.toUpperCase().trim().matches(LETRA_VALIDA_DNA_REGEX))
 				return false;
@@ -170,7 +181,7 @@ public class SimianDNAVerification {
 	 * @return TRUE se houver pelo menos 4 letras repetidas em sequência,
 	 * 			FALSE, caso contrário.
 	 */
-	protected boolean isQuatroRepetidas(String sequencia) {
+	protected static boolean isQuatroRepetidas(String sequencia) {
 		if (sequencia != null)
 			return sequencia.trim().toUpperCase().matches(SEQUENCIA_REPETIDA_REGEX);
 		
@@ -184,7 +195,7 @@ public class SimianDNAVerification {
 	 * @param dna
 	 * @return TRUE se for  quadrada, e FALSE, caso contrário.
 	 */
-	protected boolean isMatrizQuadrada(String[] dna) {
+	protected static boolean isMatrizQuadrada(String[] dna) {
 		int dimensao = dna.length;
 	
 		for (String sequencia : dna) {

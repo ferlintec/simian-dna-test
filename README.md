@@ -170,6 +170,8 @@ Escolher uma das opções. Não há restrições quanto a uso de outra IDE.
 - Abrir o Git Bash(Windows), ou o terminal do Linux, neste diretório.
 - Executar o comando 'git clone https://github.com/ferlintec/simian-dna-test.git'
 - O sistema deverá solicitar suas credenciais de acesso.
+- As configurações de acesso ao banco de dados estão no arquivo ```application.properties```.
+
 
 Pronto. Os arquivos do projeto estarão salvos no diretório.
 

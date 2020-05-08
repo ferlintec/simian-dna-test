@@ -11,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.com.ferlintec.data.DnaVerificationVO;
 import br.com.ferlintec.exception.InvalidDNAException;
 import br.com.ferlintec.model.DnaVerification;
 import br.com.ferlintec.repository.DNAVerificationRepository;
@@ -40,9 +39,7 @@ public class DNAVerificationServicesTest {
 		 
 		Mockito.when(repository.findByHashCode(Mockito.anyInt())).thenReturn(entity);
 		
-		DnaVerificationVO dnaVerificationVO = new DnaVerificationVO(dna);
-		
-		Assertions.assertThat(service.isSimian(dnaVerificationVO)).isTrue();
+		Assertions.assertThat(service.isSimian(dna)).isTrue();
 	}
 	
 	@Test
@@ -52,9 +49,7 @@ public class DNAVerificationServicesTest {
 		
 		Mockito.when(repository.findByHashCode(Mockito.anyInt())).thenReturn(null);
 		
-		DnaVerificationVO dnaVerificationVO = new DnaVerificationVO(dna);
-		
-		Assertions.assertThat(service.isSimian(dnaVerificationVO)).isTrue();
+		Assertions.assertThat(service.isSimian(dna)).isTrue();
 	}
 	
 	@Test
@@ -63,9 +58,7 @@ public class DNAVerificationServicesTest {
 
 		Mockito.when(repository.findByHashCode(Mockito.anyInt())).thenReturn(null);
 		
-		DnaVerificationVO dnaVerificationVO = new DnaVerificationVO(dna);
-		
-		Assertions.assertThat(service.isSimian(dnaVerificationVO)).isFalse();
+		Assertions.assertThat(service.isSimian(dna)).isFalse();
 	}
 	
     @Test
@@ -77,7 +70,7 @@ public class DNAVerificationServicesTest {
     	
     	String [] dna = {"CTGAGA", "CTGAGC", "TATTGT", "AGAGGG", "CCCCTA", "AT"};
 			
-		service.isSimian(new DnaVerificationVO(dna));
+		service.isSimian(dna);
     }
     
     @Test
@@ -89,7 +82,7 @@ public class DNAVerificationServicesTest {
     	
     	String [] dna = {"WWWW", "AAAA", "TTTT", "GGGG"};
 			
-		service.isSimian(new DnaVerificationVO(dna));
+		service.isSimian(dna);
     }
     
     @Test

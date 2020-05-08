@@ -25,21 +25,22 @@ public class DNAVerificationServices {
 	 * 
 	 * O mesmo DNA não terá duplicidade na base.
 	 * 
-	 * @param dnaVerificationVO
+	 * @param dna
 	 * @return TRUE se for DNA mutante Simian, FALSE se for DNA humano.
 	 */
-	public boolean isSimian(DnaVerificationVO dnaVerificationVO) {
+	public boolean isSimian(String[] dna) {
 
-
-		DnaVerification entity = findByHashCode(dnaVerificationVO.getHashCode());
+		DnaVerification entitySearch = new DnaVerification(dna);
+		
+		DnaVerification entity = findByHashCode(entitySearch.getHashCode());
 
 		if (entity != null) {
 			return entity.isSimian();
 		}else {
 			
-			boolean isSimian = SimianDNAVerification.isSimian(dnaVerificationVO.getDna());
+			boolean isSimian = SimianDNAVerification.isSimian(dna);
 			
-			entity = new DnaVerification(dnaVerificationVO.getDna(), isSimian);
+			entity = new DnaVerification(dna, isSimian);
 
 			repository.save(entity);
 
@@ -63,6 +64,13 @@ public class DNAVerificationServices {
 		return new StatsVO(count_mutant_dna, count_human_dna, ratio);
 	}
 	
+	/**
+	 * Verifica se o DNA já foi verificado, ou seja, se está na base, a partir
+	 * de seu hashCode.
+	 * 
+	 * @param hashCode
+	 * @return
+	 */
 	public DnaVerification findByHashCode(int hashCode) {
 		
 		return repository.findByHashCode(hashCode);

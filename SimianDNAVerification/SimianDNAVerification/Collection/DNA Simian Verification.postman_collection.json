@@ -1,0 +1,350 @@
+{
+	"info": {
+		"_postman_id": "d0526795-db3d-48cf-955f-6e91f853eede",
+		"name": "DNA Simian Verification",
+		"description": "Este sistema permite verificar se um DNA pertence a um humano ou a um simian.\n\nContact Support:\n Name: Adriano Ferlin\n Email: adriano.ferlin@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "dna-test",
+			"item": [
+				{
+					"name": "Verifica se o DNA pertence a um Simian",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dna\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"dnaCode\": \"<string>\",\n    \"dnaSideLength\": \"<integer>\",\n    \"hashCode\": \"<integer>\",\n    \"id\": \"<long>\",\n    \"simian\": \"<boolean>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/dna-test/simian",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"dna-test",
+								"simian"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dna\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"dnaCode\": \"<string>\",\n    \"dnaSideLength\": \"<integer>\",\n    \"hashCode\": \"<integer>\",\n    \"id\": \"<long>\",\n    \"simian\": \"<boolean>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/dna-test/simian",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"dna-test",
+										"simian"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dna\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"dnaCode\": \"<string>\",\n    \"dnaSideLength\": \"<integer>\",\n    \"hashCode\": \"<integer>\",\n    \"id\": \"<long>\",\n    \"simian\": \"<boolean>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/dna-test/simian",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"dna-test",
+										"simian"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dna\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"dnaCode\": \"<string>\",\n    \"dnaSideLength\": \"<integer>\",\n    \"hashCode\": \"<integer>\",\n    \"id\": \"<long>\",\n    \"simian\": \"<boolean>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/dna-test/simian",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"dna-test",
+										"simian"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "<object>"
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dna\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"dnaCode\": \"<string>\",\n    \"dnaSideLength\": \"<integer>\",\n    \"hashCode\": \"<integer>\",\n    \"id\": \"<long>\",\n    \"simian\": \"<boolean>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/dna-test/simian",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"dna-test",
+										"simian"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dna\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"dnaCode\": \"<string>\",\n    \"dnaSideLength\": \"<integer>\",\n    \"hashCode\": \"<integer>\",\n    \"id\": \"<long>\",\n    \"simian\": \"<boolean>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/dna-test/simian",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"dna-test",
+										"simian"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Retorna a estatistica de DNAs verificados",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/dna-test/stats",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"dna-test",
+								"stats"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/dna-test/stats",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"dna-test",
+										"stats"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/dna-test/stats",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"dna-test",
+										"stats"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/dna-test/stats",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"dna-test",
+										"stats"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/dna-test/stats",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"dna-test",
+										"stats"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "baseUrl",
+			"key": "baseUrl",
+			"value": "//localhost:8080/",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

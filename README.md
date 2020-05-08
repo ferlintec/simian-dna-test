@@ -28,6 +28,10 @@ Elas serão detalhadas mais abaixo.
 
 O método **isSimian(String[] dna)** está implementado na classe ```br.com.ferlintec.dna.SimianDNAVerfication```.
 
+As APIs podem ser testadas diretamente a partir desta documentação:
+
+http://localhost:8080/swagger-ui.html#/
+
 
 ---
 ## Orientação para Consumo das APIs
@@ -71,6 +75,13 @@ Um DNA válido será inserido uma única vez, ou seja, não haverá duplicidade 
 - Caso ocorra outro erro, gera exceção com **HTTP STATUS 500 - INTERNAL_SERVER_ERROR**.
 
 
+**Documentação**
+
+Os testes também podem ser realizados diretamente neste endereço:
+
+http://localhost:8080/swagger-ui.html#/DnaTestEndpoint/isSimianUsingPOST
+
+
 ### API REST '/stats'
 
 Este serviço verifica a estatísca de DNAs testados, e a proporção de DNAs símios sobre o total de DNAs humanos.
@@ -96,6 +107,12 @@ Retorna um **JSON** com o total de DNAs mutantes símios (*count_mutant_dna*), D
 
 ```
 
+**Documentação**
+
+Os testes também podem ser realizados diretamente neste endereço:
+
+http://localhost:8080/swagger-ui.html#/DnaTestEndpoint/getStatsUsingGET
+
 ---
 ## Acesso via Cloud AWS
 
@@ -105,6 +122,15 @@ Os serviços foram hospedados na AWS, nos seguintes endereços:
 - http://ec2-18-218-27-124.us-east-2.compute.amazonaws.com:8080/dna-test/stats
 
 As instruções de uso de cada API são as mesmas descritas acima, alterando-se apenas a URL dos serviços.
+
+
+**Documentação**
+
+As APIs podem ser testadas diretamente a partir desta documentação:
+
+http://ec2-18-218-27-124.us-east-2.compute.amazonaws.com:8080/swagger-ui.html#/DnaTestEndpoint/getStatsUsingGET
+
+http://ec2-18-218-27-124.us-east-2.compute.amazonaws.com:8080/swagger-ui.html#/DnaTestEndpoint/isSimianUsingPOST
 
 A solução foi hospedada em uma instância [EC2](https://aws.amazon.com/pt/ec2/?nc2=type_a) com banco de dados em um [RDS](https://aws.amazon.com/pt/rds/?nc2=type_a).
 

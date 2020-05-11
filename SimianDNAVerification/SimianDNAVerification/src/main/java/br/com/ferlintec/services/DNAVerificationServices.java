@@ -3,7 +3,6 @@ package br.com.ferlintec.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.ferlintec.data.DnaVerificationVO;
 import br.com.ferlintec.data.StatsVO;
 import br.com.ferlintec.dna.SimianDNAVerification;
 import br.com.ferlintec.model.DnaVerification;
@@ -32,7 +31,7 @@ public class DNAVerificationServices {
 
 		DnaVerification entitySearch = new DnaVerification(dna);
 		
-		DnaVerification entity = findByHashCode(entitySearch.getHashCode());
+		DnaVerification entity = findByHashCode(entitySearch.hashCode());
 
 		if (entity != null) {
 			return entity.isSimian();
@@ -40,9 +39,9 @@ public class DNAVerificationServices {
 			
 			boolean isSimian = SimianDNAVerification.isSimian(dna);
 			
-			entity = new DnaVerification(dna, isSimian);
+			DnaVerification entityNew = new DnaVerification(dna, isSimian);
 
-			repository.save(entity);
+			repository.save(entityNew);
 
 			return isSimian;
 		}

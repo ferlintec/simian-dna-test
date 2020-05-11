@@ -30,7 +30,7 @@ O método **isSimian(String[] dna)** está implementado na classe ```br.com.ferl
 
 As APIs podem ser testadas diretamente a partir desta documentação:
 
-http://localhost:8080/swagger-ui.html#/
+http://ec2-3-17-130-25.us-east-2.compute.amazonaws.com:8080/swagger-ui.html#/
 
 
 ---
@@ -118,8 +118,8 @@ http://localhost:8080/swagger-ui.html#/DnaTestEndpoint/getStatsUsingGET
 
 Os serviços foram hospedados na AWS, nos seguintes endereços:
 
-- http://ec2-18-218-27-124.us-east-2.compute.amazonaws.com:8080/dna-test/simian
-- http://ec2-18-218-27-124.us-east-2.compute.amazonaws.com:8080/dna-test/stats
+- http://ec2-3-17-130-25.us-east-2.compute.amazonaws.com:8080/dna-test/simian
+- http://ec2-3-17-130-25.us-east-2.compute.amazonaws.com:8080/dna-test/stats
 
 As instruções de uso de cada API são as mesmas descritas acima, alterando-se apenas a URL dos serviços.
 
@@ -128,9 +128,9 @@ As instruções de uso de cada API são as mesmas descritas acima, alterando-se 
 
 As APIs podem ser testadas diretamente a partir desta documentação:
 
-http://ec2-18-218-27-124.us-east-2.compute.amazonaws.com:8080/swagger-ui.html#/DnaTestEndpoint/getStatsUsingGET
+http://ec2-3-17-130-25.us-east-2.compute.amazonaws.com:8080/swagger-ui.html#/DnaTestEndpoint/getStatsUsingGET
 
-http://ec2-18-218-27-124.us-east-2.compute.amazonaws.com:8080/swagger-ui.html#/DnaTestEndpoint/isSimianUsingPOST
+http://ec2-3-17-130-25.us-east-2.compute.amazonaws.com:8080/swagger-ui.html#/DnaTestEndpoint/isSimianUsingPOST
 
 A solução foi hospedada em uma instância [EC2](https://aws.amazon.com/pt/ec2/?nc2=type_a) com banco de dados em um [RDS](https://aws.amazon.com/pt/rds/?nc2=type_a).
 
